@@ -1,0 +1,50 @@
+﻿<script src="~/Scripts/Users/jquery.validate.users.js"></script>
+<link href="~/Styles/style.registerview.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Registrar";
+}
+<div id="sub-container-register" class="d-flex align-items-center justify-content-center">
+    <div id="container-register" class="container">
+        <br />
+        <h2>Registro</h2>
+        <br />
+        <div id="succes-messege" class="alert alert-success" role="alert" style="display:none;">
+            La operacion fue un exito!
+        </div>
+        <form id="form">
+            <div class="row">
+                <div class="col mb-5">
+                    <label for="Name">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="UserName" placeholder="Nombre" />
+                </div>
+
+                <div class="col">
+                    <label for="LastName">Apellido</label>
+                    <input type="text" class="form-control" name="lastname" id="LastName" placeholder="Apellido" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-5">
+                    <label for="Email">Correo</label>
+                    <input type="email" class="form-control" name="email" id="Email" placeholder="Correo" />
+                </div>
+                <div class="col">
+                    <label for="Phone">Telefono</label>
+                    <input type="text" class="form-control" name="phone" id="Telephone" placeholder="Telefono" />
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="Password">Contraseña</label>
+                <input type="password" class="form-control" name="password" id="Password" placeholder="Contraseña" />
+            </div>
+            <br />
+        </form>
+        <button type="button" class="btn btn-primary" id="btnAdd">Registrarse</button>
+        <br /><br />
+        <a type="button" class="btn btn-link" href="~/Users/LoginView">Ya tienes cuenta? Iniciar Sesion</a>
+    </div>
+
+</div>

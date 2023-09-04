@@ -1,0 +1,16 @@
+﻿body {
+}
+
+#sub-container-register{
+    padding-top: 40px;
+
+}
+
+#container-register {
+    padding-left: 40px;
+    padding-bottom: 30px;
+    width: 700px;
+    box-shadow:2px 3px 10px rgba(0, 0, 0, 0.189);
+    border-radius: 10px;
+
+}

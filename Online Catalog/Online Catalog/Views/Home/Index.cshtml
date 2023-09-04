@@ -1,0 +1,69 @@
+﻿<script src="~/Scripts/Products/products.validate.jquery.js"></script>
+@model List<ProjectLogic.BLL.Entities.dtCategories>
+@{
+    ViewBag.Title = "Home Page";
+}
+<br>
+<h2>Lista de productos</h2>
+<br>
+
+<div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="Name">Nombre</label>
+        <input class="form-control" placeholder="Buscar" name="Name" id="input-productName">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="IdCategory">Categoria</label>
+        <select class="form-control" name="IdCategory" id="select-idCategory">
+            <option value="" selected="selected" disabled="disabled">Seleccione una opcion</option>
+            @{ foreach (var category in Model)
+                {
+                    <option value="@category.Id">@category.CategoryName</option>
+                }
+            }
+        </select>
+    </div>
+</div>
+
+
+<table class="table table-striped" id="ProductsTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Codigo Producto</th>
+            <th>Nombre Producto</th>
+            <th>Disponible</th>
+            <th>Autor</th>
+            <th>Fecha Creacion</th>
+            <th>Fecha Actualizacion</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+    </tbody>
+</table>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Detalle de producto</h4>
+                <button type="button" class="close" data-bs-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="ProductId">
+                <label>Producto:</label>
+                <p id="ProductName-modal">Nombre</p>
+                <label>Cant. Disponible:</label>
+                <p id="Stock-modal">5</p>
+                <label>Categoria:</label>
+                <p id="Category-modal">Cocina</pid="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

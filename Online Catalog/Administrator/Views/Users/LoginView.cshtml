@@ -1,0 +1,40 @@
+﻿<script src="~/Scripts/Users/jquery.validate.users.js"></script>
+<link href="~/Styles/style.productsview.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Login";
+}
+<br />
+<div id="danger-alert" class="alert alert-danger" role="alert" style="display:none;">
+            Credenciales incorrectas, intenta nuevamente!
+ </div>
+
+
+<div id="sub-conteiner-user" class="d-flex align-items-center justify-content-center">
+    <div id="container-user" class="container">
+        <br />
+        <br />
+        <div class="align-items-center"><h2>Acceso</h2></div>
+        <br/>
+        <form id="form">
+            <div class="form-group">
+                <label for="Email">Correo</label>
+                <input type="email" class="form-control" name="email" id="Email" placeholder="Correo" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="Password">Contraseña</label>
+                <input type="password" class="form-control" name="password" id="Password" placeholder="Contraseña" />
+            </div>
+            <br />
+        </form>
+
+        <div >
+            <button type="button" class="btn btn-primary" id="btn-login">Entrar</button>
+            <br /><br />
+            <a type="button" class="btn btn-link" href="~/Users/RegisterView" id="btn-registrar">Registrarse</a>
+        </div>
+        
+
+    </div>
+</div>

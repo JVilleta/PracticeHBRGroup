@@ -1,0 +1,84 @@
+﻿<script src="~/Scripts/Products/jquery.validate.products.js"></script>
+
+@model List<ProjectLogic.BLL.Entities.dtCategories>
+@{
+    ViewBag.Title = "Productos";
+}
+<br>
+<h2>Lista de productos</h2>
+<br>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-plus-circle"></i> Agregar Productos</button>
+<br>
+
+<table class="table table-striped" id="ProductsTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Codigo Producto</th>
+            <th>Nombre Producto</th>
+            <th>Disponible</th>
+            <th>Autor</th>
+            <th>Fecha Creacion</th>
+            <th>Fecha Actualizacion</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+    </tbody>
+</table>
+
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Producto</h4>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <input type="hidden" id="Id" />
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="Codigo">Codigo de producto</label>
+                            <input type="text" class="form-control" name="codigo" id="Codigo" placeholder="Codigo de producto" />
+                        </div>
+                    </div><br />
+                    <div class="form-group">
+                        <label for="Name">Nombre</label>
+                        <input type="text" class="form-control" name="name" id="Name" placeholder="Nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Stock">Stock</label>
+                        <input type="number" class="form-control" name="stock" id="Stock" placeholder="Stock" />
+                    </div><br />
+                    <label for="Id_Category">Categoria</label>
+                    <select class="form-control" name="id_category" id="Id_Category">
+                        <option value="" selected="selected" disabled="disabled">Seleccione una opcion</option>
+                        @{ foreach (ProjectLogic.BLL.Entities.dtCategories category in Model)
+                           {
+                                <option value="@category.Id">@category.CategoryName</option>
+                           }
+                        }
+                    </select>
+                    <div class="form-group">
+                        <label for="Status">Estado</label>
+                        <select class="form-control" name="status" id="Status">
+                            <option value="" selected="selected" disabled="disabled">Seleccione una opcion</option>
+                            <option value="true">Activo</option>
+                            <option value="false">Inactivo</option>
+                        </select>
+                    </div><br />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" id="btnAdd">Agregar</button>
+                <button type="button" class="btn btn-outline-primary" id="btnUpdate" style="display:none;">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>

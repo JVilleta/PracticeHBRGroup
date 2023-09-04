@@ -1,0 +1,66 @@
+﻿<script src="~/Scripts/Users/jquery.validate.users.js"></script>
+
+@model ProjectLogic.BLL.Entities.dtUsers
+
+@{
+    ViewBag.Title = "Inicio";
+    
+}
+<br />
+<h2>Inicio</h2>
+
+<div style="position:absolute; right: 5%;">
+    <a id="btn-exit" class="btn btn-light" href="~/Users/SignOff" ><i class="bi bi-box-arrow-in-right" style="color: red;"></i></a>
+</div>
+<br />
+
+<p>Bienvenido <strong>@Model.UserName @Model.LastName</strong></p>
+<br />
+
+<div id="succes-messege" class="alert alert-success" role="alert" style="display:none;">
+    La operacion fue un exito!
+</div>
+
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">Editar Perfil</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Usuario</h4>
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <input type="hidden" id="UserId-form" value="@Model.Id">
+                    <div class="form-group">
+                        <label for="Name">Nombre</label>
+                        <input type="text" class="form-control" name="name" id="UserName-form" placeholder="Nombre" value="@Model.UserName" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="LastName">Apellido</label>
+                        <input type="text" class="form-control" name="lastname" id="LastName-form" placeholder="Apellido" value="@Model.LastName" />
+                    </div>
+                    <br />
+                    
+                    <br />
+                    <div class="form-group">
+                        <label for="Phone">Telefono</label>
+                        <input type="text" class="form-control" name="phone" id="Telephone-form" placeholder="Telefono" value="@Model.Telephone" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="Email">Correo</label>
+                        <input type="email" class="form-control" name="email" id="Email-form" placeholder="Correo" value="@Model.Email" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" id="btnUpdate">Actualizar</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
